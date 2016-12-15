@@ -1,0 +1,13 @@
+		<div class="col-md-6">
+		 <div ng-repeat="message in messages">
+		 	<p>{{ message.nome }}</p>
+		 	<p>{{ message.email }}</p>
+		 	<p>{{ message.telefone }}</p>
+		 	<a class="btn btn-danger" ng-click="removePessoas(message)">Remover</a>
+		 	 <hr>
+
+		 </div>		
+		 			 <div  ng-if="!messages.length">
+		 	<h1>Nenhum cadastro inserido</h1>
+		 </div>	
+		</div>

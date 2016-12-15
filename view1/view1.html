@@ -1,0 +1,31 @@
+<div class="row" ng-controller="View1Ctrl">
+	<div class="col-md-5">
+		<form ng-submit="addDespesas()">
+		  <div class="form-group">
+		    <label for="nome">Nome</label>
+		    <input type="text" class="form-control" id="nome" ng-model="nome" placeholder="Nome">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Email</label>
+		    <input type="text" ng-model="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Telefone</label>
+		    <input type="text" ng-model="telefone" class="form-control" id="telefone" placeholder="Telefone">
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default" ng-disabled="">Submit</button>
+		</form>
+<!-- 		 <li ng-repeat="message in messages">{{ message.nome }}</li>	
+		 <li ng-repeat="message in messages">{{ message.email }}</li>		
+		 <li ng-repeat="message in messages">{{ message.telefone }}</li> -->	
+	</div>
+
+
+
+
+</div>
