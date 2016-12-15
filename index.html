@@ -2,20 +2,17 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+ <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp"  ng-cloak>
   <ul class="menu">
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
@@ -32,7 +29,63 @@
     </div>
   </div>
 
+<div ng-cloak="" class="carddemoBasicUsage" ng-app="MyApp" >
+  <md-content class="md-padding" layout-xs="column"  ng-controller="View1Ctrl">
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-if="!messages.length"  layout="row" >
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Nenhum dado foi inserido </span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </div>
+    <div flex-xs="" flex-gt-xs="50" layout="column" >
+  
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="" ng-repeat="message in messages">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ message.nome }}</span>
+            <span class="md-subhead">{{ message.email }}</span>
+            <span class="md-subhead">{{ message.telefone }}</span>
 
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button><a class="btn btn-danger" ng-click="removePessoas(message)">Remover</a></md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+<!--       <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Medium</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card> -->
+
+      <div layout="" layout-padding="" layout-align="center end" style="height:200px">
+        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+      </div>
+    </div>
+  </md-content>
+</div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+-->
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -48,10 +101,15 @@
   };
   firebase.initializeApp(config);
 </script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
+
   <script src="bower_components/angular/angular.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>  
   <script src="bower_components/angular-route/angular-route.js"></script>
-  
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
 
   <script src="app.js"></script>
