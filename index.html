@@ -2,90 +2,105 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" > <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js" ng-cloak> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bootstrap-watch.css">
+  <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <script src="material-datepicker-master/libs/jquery-2.1.3.min.js"></script>
+
+  <link rel="stylesheet" href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css">
+    
 </head>
-<body ng-app="myApp"  ng-cloak>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<body>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
 
-  <div class="container-fluid">
-    <div class="container">
-        <div ng-view></div>
+<div class="container-fluid box-full" ng-controller="View1Ctrl">
+<div class="col-md-2 menu-lateral">
+  <div class="avatar text-center">
+ <p><img src="http://kbmms.github.io/portfolio/images/eu.png" width="105px" alt=""></p>
+Marcel Santos <br>
+  ADM
+  </div>
+
+  <div class="btn-routes">
+    <div class="list-group">
+      <a href="#!/view1/src" class="list-group-item">Cadastro
+      </a>
+      <a href="#!/view2" class="list-group-item">Itens Cadastrados
+      </a>
     </div>
   </div>
 
-<div ng-cloak="" class="carddemoBasicUsage" ng-app="MyApp" >
-  <md-content class="md-padding" layout-xs="column"  ng-controller="View1Ctrl">
-    <div flex-xs="" flex-gt-xs="50" layout="column">
-      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-if="!messages.length"  layout="row" >
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Nenhum dado foi inserido </span>
-          </md-card-title-text>
-        </md-card-title>
-      </md-card>
-    </div>
-    <div flex-xs="" flex-gt-xs="50" layout="column" >
-  
-      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="" ng-repeat="message in messages">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{ message.nome }}</span>
-            <span class="md-subhead">{{ message.email }}</span>
-            <span class="md-subhead">{{ message.telefone }}</span>
+</div>
 
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button><a class="btn btn-danger" ng-click="removePessoas(message)">Remover</a></md-button>
-          <md-button>Action 2</md-button>
-        </md-card-actions>
-      </md-card>
-<!--       <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch="">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card with image</span>
-            <span class="md-subhead">Medium</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-md card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-        </md-card-actions>
-      </md-card> -->
-
-      <div layout="" layout-padding="" layout-align="center end" style="height:200px">
-        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
-      </div>
+<div class="col-md-10 container topo-conteudo">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
-  </md-content>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="message" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Total de Cadastros: <span class="badge">{{messages.length}}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="col-md-10 col-md-offset-1 box-central">
+     <div ng-view></div>
+  </div>
+
+</div>
 </div>
 
 <!--
-Copyright 2016 Google Inc. All Rights Reserved. 
+Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
 -->
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -103,17 +118,14 @@ Use of this source code is governed by an MIT-style license that can be foundin 
 </script>
 
   <script src="bower_components/angular/angular.js"></script>
- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-
-  <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>  
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script> 
+  <script src="view3/view3.js"></script>  
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
 
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
 </body>
 </html>

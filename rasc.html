@@ -1,0 +1,57 @@
+  <ul class="menu">
+    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/view2">view2</a></li>
+  </ul>
+
+<div ng-cloak="" class="carddemoBasicUsage" ng-app="MyApp" >
+  <md-content class="md-padding" layout-xs="column"  ng-controller="View1Ctrl">
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-if="!messages.length"  layout="row" >
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Nenhum dado foi inserido </span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </div>
+    <div flex-xs="" flex-gt-xs="50" layout="column" >
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="" ng-repeat="message in messages">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ message.nome }}</span>
+            <span class="md-subhead">{{ message.email }}</span>
+            <span class="md-subhead">{{ message.telefone }}</span>
+
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button><a class="btn btn-danger" ng-click="removePessoas(message)">Remover</a></md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+<!--       <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Medium</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card> -->
+
+      <div layout="" layout-padding="" layout-align="center end" style="height:200px">
+        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+      </div>
+    </div>
+  </md-content>
+</div>

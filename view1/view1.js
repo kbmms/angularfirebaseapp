@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', '720kb.datepicker'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -21,18 +21,21 @@ angular.module('myApp.view1', ['ngRoute'])
   	$scope.messages.$add({
   		nome: $scope.nome,
   		email: $scope.email,
-  		telefone: $scope.telefone
+  		telefone: $scope.telefone,
+  		date: $scope.date
   	}).then(function(ref){
   		// var id = ref.key();
   		// console.log('adicionou' +id);
-
+  		alert("Cadastro Efetuado");
   		$scope.nome = '';
   		$scope.email = '';
   		$scope.telefone = '';
+  		$scope.date = '';
   	});
   }
 
   $scope.removePessoas = function(message){
   	$scope.messages.$remove(message);
   }
+
 }]);
